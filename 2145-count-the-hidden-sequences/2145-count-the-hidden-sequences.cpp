@@ -2,15 +2,13 @@ class Solution {
 public:
     int numberOfArrays(vector<int>& differences, int lower, int upper) {
         //Stupid mistake I made here. We just have to check whether the max and min values formed from the array "differences" lies within the range [lower, upper]. 
-        long max_diff = 0;
-        long min_diff = 0;
-        long num = 0;
-        for(int i = 0; i < differences.size(); i++) {
-            num += differences[i];
-            max_diff = max(max_diff, num);
-            min_diff = min(min_diff, num);
+        long long mini=0,maxi=0,num=0, n=differences.size();
+        for(long long i=0;i<n;i++){
+            num+=differences[i];
+            maxi=max(maxi,num);
+            mini=min(mini,num);
         }
-        int count = (upper - max_diff) - (lower - min_diff) + 1;
-        return max(0, count);
+        int ans=1+(mini-lower)+(upper-maxi);
+        return max(ans,0);
     }
 };
