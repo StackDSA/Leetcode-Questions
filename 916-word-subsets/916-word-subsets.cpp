@@ -1,15 +1,15 @@
 class Solution {
     //Apart from brute force, we can store the max freq of each alphabet from words2 in a map and check whether the map[words1[i]] matches with this global map. We can do this using vector, map and multiset. I have used vectors.
-public:
     bool compare(vector<int> word1, vector<int> word2) {
-        for (int i = 0; i < 26; i++) {
-            if (word2[i] > word1[i]) {
+         for (int i = 0; i < 26; i++) {
+             if (word2[i] > word1[i]) {
                 return false;
-            }
-        }
-        return true;
+             }
+         }
+         return true;
     }
-    
+
+public:
     vector<string> wordSubsets(vector<string>& words1, vector<string>& words2) {
         int m = words1.size();
         vector<vector<int>> word1Vec(m, vector<int> (26, 0));
