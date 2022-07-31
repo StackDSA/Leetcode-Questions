@@ -6,7 +6,7 @@ public:
         if(grid[i][j]=='0'){
             return;
         }
-        grid[i][j]='0';
+        grid[i][j]='0'; //instead of using a visitedarray,we erase the islands we get.   
         dfs(i+1,j,n,m,grid);
         dfs(i,j+1,n,m,grid);
         dfs(i-1,j,n,m,grid);
