@@ -1,7 +1,8 @@
 class NumArray {
-public:
     vector<int>arr;
     int sum=0;
+public:
+    
     NumArray(vector<int>& nums) {
         arr = nums;
         sum = accumulate(arr.begin(), arr.end(), 0);
